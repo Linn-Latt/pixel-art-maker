@@ -47,12 +47,6 @@ button {
     max-width: 1920px;
     margin: 0 auto;
 }
-/* .inner_width {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 calc(40/1100 * var(--fluid-1100));
-    box-sizing: border-box;
-} */
 
 header {
     background-color: #bfe0f3;
@@ -71,7 +65,7 @@ header {
     margin: calc(20/1100 * var(--fluid-1100)) 0;
 }
 .editor_content {width: 25%;}
-.canvas {width: 70%;}
+.canvas {width: 73%;}
 .editor_card {
     background-color: var(--white-color);
     padding: calc(10/1100 * var(--fluid-1100));
@@ -86,6 +80,32 @@ header {
 }
 
 @media screen and (max-width: 750px) {
-    .inner_width {padding: 0 calc(80/750 * var(--fluid-750));}
+    .container {padding: calc(20/750 * var(--fluid-750)) calc(12/750 * var(--fluid-750));}
+    .content {
+        padding: calc(10/750 * var(--fluid-750));
+        border-radius: calc(8/750 * var(--fluid-750));
+    }
+    header {
+        padding: calc(14/750 * var(--fluid-750)) 0;
+        border-radius: calc(5/750 * var(--fluid-750));
+    }
+    .editor {
+        flex-direction: column;
+        margin: calc(12/750 * var(--fluid-750)) 0;
+        gap: calc(10/750 * var(--fluid-750));
+    }
+    .editor_content {width: 100%;}
+    .canvas {width: 100%;}
+    .editor_card {
+        padding: calc(10/750 * var(--fluid-750));
+        margin-bottom: calc(10/750 * var(--fluid-750));
+        border-radius: calc(5/750 * var(--fluid-750));
+    }
+    button {
+        padding: calc(7/750 * var(--fluid-750)) calc(10/750 * var(--fluid-750));
+        border-radius: calc(5/750 * var(--fluid-750));
+    }
+    .footer {padding: calc(10/750 * var(--fluid-750)) 0;}
 }
+
 
