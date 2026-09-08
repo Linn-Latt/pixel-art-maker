@@ -52,7 +52,7 @@
                             <button type="button" class="tool_btn active" data-tool="pencil"><i class="fa-solid fa-pencil icon"></i>Pencil</button> 
                             <button type="button" class="tool_btn" data-tool="eraser"><i class="fa-solid fa-eraser icon"></i>Eraser</button> 
                             <button type="button" class="tool_btn" data-tool="fill"><i class="fa-solid fa-fill icon"></i>Fill</button>
-                            <button type="button" class="clear_btn"><i class="fa-solid fa-trash icon"></i>Clear</button> 
+                            <button type="button" id="clear_btn" class="clear_btn"><i class="fa-solid fa-trash icon"></i>Clear</button> 
                         </div>
                     </section> 
                     <!-- Color -->
@@ -69,25 +69,51 @@
                             <div class="color_palette"> 
                                 <button type="button" class="color_item active"
                                     data-color="#000000" style="background-color: #000000;"
-                                    aria-label="Black"></button> <button type="button" class="color_item"
+                                    aria-label="Black">
+                                </button> 
+                                <button type="button" class="color_item"
                                     data-color="#ffffff" style="background-color: #ffffff;"
-                                    aria-label="White"></button> <button type="button" class="color_item"
+                                    aria-label="White">
+                                </button> 
+                                <button type="button" class="color_item"
                                     data-color="#ff0000" style="background-color: #ff0000;"
-                                    aria-label="Red"></button> <button type="button" class="color_item"
+                                    aria-label="Red">
+                                </button> 
+                                <button type="button" class="color_item"
                                     data-color="#ff8800" style="background-color: #ff8800;"
-                                    aria-label="Orange"></button> <button type="button" class="color_item"
+                                    aria-label="Orange">
+                                </button> 
+                                <button type="button" class="color_item"
                                     data-color="#ffff00" style="background-color: #ffff00;"
-                                    aria-label="Yellow"></button> <button type="button" class="color_item"
+                                    aria-label="Yellow">
+                                </button> 
+                                <button type="button" class="color_item"
                                     data-color="#00aa00" style="background-color: #00aa00;"
-                                    aria-label="Green"></button> <button type="button" class="color_item"
+                                    aria-label="Green">
+                                </button> 
+                                <button type="button" class="color_item"
                                     data-color="#0000ff" style="background-color: #0000ff;"
-                                    aria-label="Blue"></button> <button type="button" class="color_item"
+                                    aria-label="Blue">
+                                </button> 
+                                <button type="button" class="color_item"
                                     data-color="#8800ff" style="background-color: #8800ff;"
                                     aria-label="Purple">
                                 </button> 
                             </div>
                         </div>
                     </section> 
+                    <!-- View Controls / Zoom -->
+                    <section class="view_settings editor_card">
+                        <div class="section_title">
+                            <h2>Zoom Level</h2>
+                        </div>
+                        <div class="view_controls">
+                            <button type="button" class="zoom_btn active" data-zoom="100">100%</button>
+                            <button type="button" class="zoom_btn" data-zoom="150">150%</button>
+                            <button type="button" class="zoom_btn" data-zoom="200">200%</button>
+                            <button type="button" class="zoom_btn" data-zoom="300">300%</button>
+                        </div>
+                    </section>
                 </div>
                 <div class="canvas">
                     <!-- Pixel Grid -->
@@ -119,5 +145,11 @@
             <p>Pixel Art Maker</p>
         </div>
     </footer>
+
+    <script src="js/state.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/export.js"></script>
+    <script src="js/main.js" type="module"></script>
+
 </body>
 </html>
