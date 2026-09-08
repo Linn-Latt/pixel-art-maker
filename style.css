@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+10&family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --fluid-1100: min(100vw, 1100px);
+    --fluid-1200: min(100vw, 1200px);
+    --fluid-750: min(100vw, 750px);
+    --default-bg-color: #dfe2e7;
+    --container-color: #e5eff8;
+    --white-color: #fff;
+}
+* {
+	box-sizing: border-box;
+	margin: 0;
+    padding: 0;
+}
+body { 
+    height: 100vh;
+    font-family: "Google Sans", sans-serif;
+}
+.icon {color: #CC3A63;}
+button {
+    background: linear-gradient(
+        to bottom,
+        #fcfcfc 0%,
+        #e3e6eb 100%
+    );
+    border: 1.5px solid #222;
+    padding: calc(5/1100 * var(--fluid-1100));
+    border-radius: calc(5/1100 * var(--fluid-1100));
+    box-shadow: 0 2px 0 #222, 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.1s ease;
+}
+.container {
+	max-width: 1920px;
+    background-color: var(--default-bg-color);
+    margin: auto auto;
+    padding: calc(40/1100 * var(--fluid-1100)) calc(20/1100 * var(--fluid-1100));
+}
+.content {
+    max-width: 1180px;
+    background-color: var(--container-color);
+    padding: calc(10/1100 * var(--fluid-1100));
+    margin: 0 auto;
+    border-radius: calc(10/1100 * var(--fluid-1100));
+}
+.outer_width {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+/* .inner_width {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 calc(40/1100 * var(--fluid-1100));
+    box-sizing: border-box;
+} */
+
+header {
+    background-color: #bfe0f3;
+    text-align: center;
+    padding: calc(10/1100 * var(--fluid-1100)) 0;
+    border-radius: calc(5/1100 * var(--fluid-1100));
+}
+.header_content h1 {
+    font-family: "Pixelify Sans", sans-serif;
+    padding-bottom: calc(10/1100 * var(--fluid-1100));
+}
+.editor {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin: calc(20/1100 * var(--fluid-1100)) 0;
+}
+.editor_content {width: 25%;}
+.canvas {width: 70%;}
+.editor_card {
+    background-color: var(--white-color);
+    padding: calc(10/1100 * var(--fluid-1100));
+    margin-bottom: calc(10/1100 * var(--fluid-1100));
+    border-radius: calc(5/1100 * var(--fluid-1100));
+}
+
+.footer {
+    background-color: #eaeff1;
+    text-align: center;
+    padding: calc(10/1100 * var(--fluid-1100)) 0;
+}
+
+@media screen and (max-width: 750px) {
+    .inner_width {padding: 0 calc(80/750 * var(--fluid-750));}
+}
+

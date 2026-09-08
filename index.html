@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Marker</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    >
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header_content">
+                    <h1>Pixel Art Maker</h1>
+                    <p>Create your own pixel art</p>
+                </div>
+            </header>
+
+            <!-- Pixel Art Editor -->
+            <main class="editor">
+                <div class="editor_content"> 
+                    <!-- Grid Settings -->
+                    <section class="grid_settings editor_card">
+                        <div class="section_title">
+                            <h2>Grid Size</h2>
+                        </div>
+                        <div class="grid_inputs">
+                            <div class="grid_input"> 
+                                <label for="rows">Rows</label> 
+                                <input type="number" id="rows" name="rows" min="1" max="64" value="16"> 
+                            </div>
+                            <div class="grid_input"> 
+                                <label for="columns">Columns</label> 
+                                <input type="number" id="columns" name="columns" min="1" max="64" value="16"> 
+                            </div> 
+                            <button type="button" id="create_grid" class="create_btn"> Create Grid </button>
+                        </div>
+                    </section> 
+                    <!-- Editor Tools -->
+                    <section class="tools editor_card">
+                        <div class="section_title">
+                            <h2>Tools</h2>
+                        </div>
+                        <div class="tool_buttons"> 
+                            <button type="button" class="tool_btn active" data-tool="pencil"><i class="fa-solid fa-pencil icon"></i>Pencil</button> 
+                            <button type="button" class="tool_btn" data-tool="eraser"><i class="fa-solid fa-eraser icon"></i>Eraser</button> 
+                            <button type="button" class="tool_btn" data-tool="fill"><i class="fa-solid fa-fill icon"></i>Fill</button>
+                            <button type="button" class="clear_btn"><i class="fa-solid fa-trash icon"></i>Clear</button> 
+                        </div>
+                    </section> 
+                    <!-- Color -->
+                    <section class="colors editor_card">
+                        <div class="section_title">
+                            <h2>Colors</h2>
+                        </div>
+                        <div class="color_content">
+                            <div class="color_picker"> 
+                                <!-- <label for="color">Choose Color</label>  -->
+                                <input type="color" id="color" name="color" value="#000000"> 
+                                <i class="fa-solid fa-eye-dropper icon"></i>
+                            </div>
+                            <div class="color_palette"> 
+                                <button type="button" class="color_item active"
+                                    data-color="#000000" style="background-color: #000000;"
+                                    aria-label="Black"></button> <button type="button" class="color_item"
+                                    data-color="#ffffff" style="background-color: #ffffff;"
+                                    aria-label="White"></button> <button type="button" class="color_item"
+                                    data-color="#ff0000" style="background-color: #ff0000;"
+                                    aria-label="Red"></button> <button type="button" class="color_item"
+                                    data-color="#ff8800" style="background-color: #ff8800;"
+                                    aria-label="Orange"></button> <button type="button" class="color_item"
+                                    data-color="#ffff00" style="background-color: #ffff00;"
+                                    aria-label="Yellow"></button> <button type="button" class="color_item"
+                                    data-color="#00aa00" style="background-color: #00aa00;"
+                                    aria-label="Green"></button> <button type="button" class="color_item"
+                                    data-color="#0000ff" style="background-color: #0000ff;"
+                                    aria-label="Blue"></button> <button type="button" class="color_item"
+                                    data-color="#8800ff" style="background-color: #8800ff;"
+                                    aria-label="Purple">
+                                </button> 
+                            </div>
+                        </div>
+                    </section> 
+                </div>
+                <div class="canvas">
+                    <!-- Pixel Grid -->
+                    <section class="pixel_editor editor_card">
+                        <div class="section_title">
+                            <h2>Canvas</h2>
+                        </div>
+                        <div class="pixel_grid_wrapper">
+                            <div id="pixel_grid" class="pixel_grid">
+                                <!-- Pixel cells will be created by JavaScript --> 
+                            </div>
+                        </div>
+                    </section> 
+                    <!-- Editor Actions -->
+                    <section class="editor_actions editor_card"> 
+                        <button type="button" id="undo_btn" class="action_btn">Undo<i class="fa-solid fa-arrow-rotate-left icon"></i></button> 
+                        <button type="button" id="redo_btn" class="action_btn"><i class="fa-solid fa-arrow-rotate-right icon"></i>Redo</button> 
+                        <button type="button" id="save_btn" class="action_btn"><i class="fa-solid fa-floppy-disk icon"></i>Save</button> 
+                        <button type="button" id="download_btn" class="action_btn"><i class="fa-solid fa-download icon"></i>Download</button> 
+                    </section>
+                </div>
+            </main>
+        </div>
+        
+    </div>
+    <!-- Footer --> 
+    <footer class="footer outer_width"> 
+        <div class="footer_content">
+            <p>Pixel Art Maker</p>
+        </div>
+    </footer>
+</body>
+</html>
