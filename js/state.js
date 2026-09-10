@@ -1,4 +1,4 @@
-class AppState {
+export class AppState {
     constructor() {
         this.rows = 16;
         this.cols = 16;
@@ -7,7 +7,7 @@ class AppState {
         this.isMouseDown = false;
         this.zoomLevel = 100;
         
-        // History Management
+        // History Management for Undo / Redo
         this.history = [];
         this.historyIndex = -1;
         this.maxHistory = 30;

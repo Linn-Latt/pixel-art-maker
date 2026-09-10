@@ -1,4 +1,4 @@
-function floodFill(gridContainer, startIdx, targetColor, replacementColor, cols, rows) {
+export function floodFill(gridContainer, startIdx, targetColor, replacementColor, cols, rows) {
     if (targetColor === replacementColor) return;
 
     const pixels = Array.from(gridContainer.children);

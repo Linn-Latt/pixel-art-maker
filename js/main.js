@@ -1,3 +1,7 @@
+import { AppState } from './state.js';
+import { floodFill } from './tools.js';
+import { exportToPNG } from './export.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     const state = new AppState();
 

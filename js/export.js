@@ -1,4 +1,4 @@
-function exportToPNG(gridContainer, rows, cols) {
+export function exportToPNG(gridContainer, rows, cols) {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     
