@@ -83,6 +83,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function paintAtPoint(x, y) {
+        const el = document.elementFromPoint(x, y);
+        paintPixel(el);
+    }
+
     // Mouse Painting Events
     pixelGrid.addEventListener('mousedown', (e) => {
         if (e.target.classList.contains('pixel')) {
@@ -94,6 +99,28 @@ document.addEventListener('DOMContentLoaded', () => {
     pixelGrid.addEventListener('mouseover', (e) => {
         if (state.isMouseDown && state.currentTool !== 'fill') {
             paintPixel(e.target);
+        }
+    });
+
+    pixelGrid.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        const touch = e.touches[0];
+        state.isMouseDown = true;
+        paintAtPoint(touch.clientX, touch.clientY);
+    }, { passive: false });
+
+    pixelGrid.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+        const touch = e.touches[0];
+        if (state.isMouseDown && state.currentTool !== 'fill') {
+            paintAtPoint(touch.clientX, touch.clientY);
+        }
+    }, { passive: false });
+
+    pixelGrid.addEventListener('touchend', () => {
+        if (state.isMouseDown) {
+            state.isMouseDown = false;
+            recordSnapshot();
         }
     });
 
