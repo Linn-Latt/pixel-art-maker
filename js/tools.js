@@ -44,9 +44,25 @@ export function floodFill(gridContainer, startIdx, targetColor, replacementColor
 
 function colorsMatch(c1, c2) {
     // Helper to normalize hex and rgb format comparisons
-    const temp1 = document.createElement('div');
-    temp1.style.color = c1;
-    const temp2 = document.createElement('div');
-    temp2.style.color = c2;
-    return temp1.style.color === temp2.style.color;
+    return normalizeColor(c1) === normalizeColor(c2);
+}
+
+function normalizeColor(color) {
+    color = color.trim();
+
+    const rgbMatch = color.match(/^rgb\(\s*(\d+),\s*(\d+),\s*(\d+)\s*\)$/);
+    if (rgbMatch) {
+        return `${rgbMatch[1]},${rgbMatch[2]},${rgbMatch[3]}`;
+    }
+
+    if (/^#[0-9a-f]{3}$/i.test(color)) {
+        color = `#${color[1]}${color[1]}${color[2]}${color[2]}${color[3]}${color[3]}`;
+    }
+
+    const hexMatch = color.match(/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
+    if (hexMatch) {
+        return `${parseInt(hexMatch[1], 16)},${parseInt(hexMatch[2], 16)},${parseInt(hexMatch[3], 16)}`;
+    }
+
+    return color;
 }

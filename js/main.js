@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Mouse Painting Events
-    window.addEventListener('mousedown', (e) => {
+    pixelGrid.addEventListener('mousedown', (e) => {
         if (e.target.classList.contains('pixel')) {
             state.isMouseDown = true;
             paintPixel(e.target);
